@@ -1,0 +1,12 @@
+[global]
+ioengine=posixaio
+runtime=60s
+time_based
+numjobs=10
+
+[mixed-io]
+rw=randrw
+rwmixread=30  ; Adjust this value to change the read/write mix
+bs=4k
+size=50m
+directory=./

@@ -1,0 +1,11 @@
+[global]
+ioengine=posixaio
+runtime=60s
+time_based
+
+[mixed-io]
+rw=randrw
+rwmixread=75  ; Adjust this value to change the read/write mix
+bs=4k
+size=50m
+directory="/Volumes/TONY'S DISK/test"

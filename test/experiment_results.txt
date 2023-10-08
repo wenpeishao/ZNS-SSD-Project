@@ -1,0 +1,4 @@
+Write Percentage: 10, Read Latency (ns): 
+Write Percentage: 20, Read Latency (ns): 
+Write Percentage: 10, Read Latency (ns): 
+Write Percentage: 20, Read Latency (ns): 

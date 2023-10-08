@@ -1,0 +1,14 @@
+[global]
+ioengine=posixaio
+runtime=60s
+time_based
+output-format=json
+output=random-write-result.json
+
+[random-write]
+rw=randwrite
+bs=4k
+numjobs=1
+size=50m
+directory=/Volumes/TONY'S\ DISK/test
+
