@@ -79,7 +79,7 @@ plt.figure()  # Create a new figure
 ax = df.plot(x='Block_Size', y=['Seq_Read_IOPS', 'Rand_Read_IOPS', 'Seq_Write_IOPS', 'Rand_Write_IOPS'], kind='line')
 plt.title('IOPS for Various Operations')
 plt.ylabel('IOPS')
-plt.savefig("IOPS_Plot.png")  # Save plot to PNG file
+plt.savefig("IOPS_Plot_direct.png")  # Save plot to PNG file
 plt.show()
 
 # Plotting for Throughput
@@ -87,5 +87,5 @@ plt.figure()  # Create a new figure
 ax = df.plot(x='Block_Size', y=['Seq_Read_Throughput', 'Rand_Read_Throughput', 'Seq_Write_Throughput', 'Rand_Write_Throughput'], kind='line')
 plt.title('Throughput for Various Operations')
 plt.ylabel('Throughput (KB/s)')
-plt.savefig("Throughput_Plot.png")  # Save plot to PNG file
+plt.savefig("Throughput_Plot_direct.png")  # Save plot to PNG file
 plt.show()

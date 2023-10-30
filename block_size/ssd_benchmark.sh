@@ -33,6 +33,7 @@ for op in $OPERATIONS; do
         --runtime=$RUN_TIME \
         --filename=$DEVICE \
         --output-format=json \
+        --direct=1 \
         --output=$JSON_OUTPUT
   done
 done
