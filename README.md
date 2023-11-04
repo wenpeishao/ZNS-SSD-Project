@@ -14,7 +14,7 @@ This document outlines the process and methodologies used for benchmarking Solid
 
 ## Environments
 
-- **OS**: Ubuntu 23.10
+- **OS**: ULinux version 6.2.0-34-generic (buildd@lcy02-amd64-025) (x86_64-linux-gnu-gcc-12 (Ubuntu 12.3.0-1ubuntu1~23.04) 12.3.0, GNU ld (GNU Binutils for Ubuntu) 2.40)
 - **SSD**: samsung 970 evo plus 2TB
 - **Processor**: 8th Generation Intel® Core™ i7-8750H Processor (2.20 GHz, up to 4.10 GHz with Turbo Boost, 6 Cores, 12 Threads, 9 MB Cache)
 - **Graphics**: NVIDIA® GeForce® GTX 1050 Ti Max-Q 4GB
