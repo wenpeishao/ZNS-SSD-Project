@@ -56,7 +56,7 @@ I/O Engines
 - `io_uring`: A newer, efficient, and feature-rich asynchronous I/O API for Linux.
 - `psync`: Synchronous I/O, where each I/O operation must complete before the next begins.
 
-### Results and Figures
+## Results and Figures
 
 To illustrate the differences in performance, the following figures compare the IOPS and throughput between direct=0 and direct=1:
 
@@ -70,6 +70,6 @@ Figure 1: IOPS Comparison between direct=0 and direct=1
 
 Figure 2: Throughput Comparison between direct=0 and direct=1
 
-### Conclusion
+## Conclusion
 
 Benchmarking SSDs is a critical process for assessing performance characteristics under various conditions. Using different fio options and understanding their implications helps in conducting effective and targeted benchmarks.
