@@ -59,13 +59,13 @@ We will use several fio options to perform our benchmarks. Here are some of the 
 
     To illustrate the differences in performance, the following figures compare the IOPS and throughput between direct=0 and direct=1:
 
-    ![](block_size/IOPS_Plot.png)
-    ![](block_size/IOPS_Plot_direct.png)
+![](block_size/IOPS_Plot.png)
+![](block_size/IOPS_Plot_direct.png)
 
 Figure 1: IOPS Comparison between direct=0 and direct=1
 
-    ![](block_size/Throughput_Plot.png)
-    ![](block_size/Throughput_Plot_direct.png)
+![](block_size/Throughput_Plot.png)
+![](block_size/Throughput_Plot_direct.png)
 
 Figure 2: Throughput Comparison between direct=0 and direct=1
 
