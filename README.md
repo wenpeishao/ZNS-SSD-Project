@@ -44,21 +44,21 @@ fio --name=benchmark --size=1G --filename=/dev/nvme0n1 --bs=4k --rw=randread --i
 
 ### Step 4: Analyzing Results
 
-    Results will provide various metrics, including IOPS, latency, and throughput.
-    Direct I/O vs. Buffered I/O
+Results will provide various metrics, including IOPS, latency, and throughput.
+Direct I/O vs. Buffered I/O
 
-        direct=0: Uses the OS buffer cache, which can lead to faster performance due to caching but does not always represent true hardware performance.
-        direct=1: Bypasses the OS cache, directly interacting with the device, providing a more accurate representation of the SSD's raw performance.
+- `direct=0`: Uses the OS buffer cache, which can lead to faster performance due to caching but does not always represent true hardware performance.
+- `direct=1`: Bypasses the OS cache, directly interacting with the device, providing a more accurate representation of the SSD's raw performance.
 
-    I/O Engines
+I/O Engines
 
-        libaio: Provides asynchronous I/O operations for Linux, using kernel AIO.
-        io_uring: A newer, efficient, and feature-rich asynchronous I/O API for Linux.
-        psync: Synchronous I/O, where each I/O operation must complete before the next begins.
+- `libaio`: Provides asynchronous I/O operations for Linux, using kernel AIO.
+- `io_uring`: A newer, efficient, and feature-rich asynchronous I/O API for Linux.
+- `psync`: Synchronous I/O, where each I/O operation must complete before the next begins.
 
 ### Results and Figures
 
-    To illustrate the differences in performance, the following figures compare the IOPS and throughput between direct=0 and direct=1:
+To illustrate the differences in performance, the following figures compare the IOPS and throughput between direct=0 and direct=1:
 
 ![](block_size/IOPS_Plot.png)
 ![](block_size/IOPS_Plot_direct.png)
@@ -72,4 +72,4 @@ Figure 2: Throughput Comparison between direct=0 and direct=1
 
 ### Conclusion
 
-    Benchmarking SSDs is a critical process for assessing performance characteristics under various conditions. Using different fio options and understanding their implications helps in conducting effective and targeted benchmarks.
+Benchmarking SSDs is a critical process for assessing performance characteristics under various conditions. Using different fio options and understanding their implications helps in conducting effective and targeted benchmarks.
