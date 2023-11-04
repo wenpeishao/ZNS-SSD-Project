@@ -12,6 +12,14 @@ This document outlines the process and methodologies used for benchmarking Solid
 - **Benchmarking Tool**: We will use `fio` (Flexible I/O Tester), a versatile tool for measuring and analyzing I/O performance.
 - **System State**: Close unnecessary applications and services that might affect the benchmarking results.
 
+## Environments
+
+- **OS**: Ubuntu 23.10
+- **SSD**: samsung 970 evo plus 2TB
+- **Processor**: 8th Generation Intel® Core™ i7-8750H Processor (2.20 GHz, up to 4.10 GHz with Turbo Boost, 6 Cores, 12 Threads, 9 MB Cache)
+- **Graphics**: NVIDIA® GeForce® GTX 1050 Ti Max-Q 4GB
+- **Memory**: 32 GB DDR4 2667MHz
+
 ## Benchmarking Process
 
 ### Step 1: Installation of `fio`
