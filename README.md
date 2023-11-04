@@ -22,7 +22,7 @@ sudo apt-get update
 sudo apt-get install fio
 ```
 
-## Step 2: Understanding fio Parameters
+### Step 2: Understanding fio Parameters
 
 We will use several fio options to perform our benchmarks. Here are some of the parameters and their descriptions:
 
@@ -34,13 +34,13 @@ We will use several fio options to perform our benchmarks. Here are some of the 
 - `ioengine`: I/O engine to use (sync, psync, libaio, or io_uring).
 - `direct`: Use direct I/O (1) or buffered I/O (0).
 
-## Step 3: Running Benchmarks
+### Step 3: Running Benchmarks
 
 Here's an example fio command:
 
 ```sh
 fio --name=benchmark --size=1G --filename=/dev/nvme0n1 --bs=4k --rw=randread --ioengine=libaio --iodepth=32 --direct=1
-
+```
 
 ### Step 4: Analyzing Results
 
@@ -73,4 +73,3 @@ Figure 2: Throughput Comparison between direct=0 and direct=1
 ### Conclusion
 
     Benchmarking SSDs is a critical process for assessing performance characteristics under various conditions. Using different fio options and understanding their implications helps in conducting effective and targeted benchmarks.
-```
