@@ -1,0 +1,30 @@
+write_test_3G: (g=0): rw=write, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=io_uring, iodepth=1
+fio-3.35
+Starting 1 process
+
+write_test_3G: (groupid=0, jobs=1): err= 0: pid=16494: Sun Nov 12 22:47:55 2023
+  write: IOPS=790, BW=791MiB/s (829MB/s)(3072MiB/3884msec); 0 zone resets
+    slat (usec): min=33, max=144, avg=50.01, stdev= 9.60
+    clat (usec): min=1104, max=2616, avg=1212.20, stdev=60.07
+     lat (usec): min=1149, max=2689, avg=1262.22, stdev=62.45
+    clat percentiles (usec):
+     |  1.00th=[ 1139],  5.00th=[ 1156], 10.00th=[ 1172], 20.00th=[ 1188],
+     | 30.00th=[ 1188], 40.00th=[ 1188], 50.00th=[ 1188], 60.00th=[ 1205],
+     | 70.00th=[ 1205], 80.00th=[ 1221], 90.00th=[ 1287], 95.00th=[ 1352],
+     | 99.00th=[ 1401], 99.50th=[ 1418], 99.90th=[ 1483], 99.95th=[ 1500],
+     | 99.99th=[ 2606]
+   bw (  KiB/s): min=819200, max=824320, per=100.00%, avg=821863.33, stdev=2566.25, samples=3
+   iops        : min=  800, max=  805, avg=802.33, stdev= 2.52, samples=3
+  lat (msec)   : 2=99.97%, 4=0.03%
+  cpu          : usr=3.04%, sys=2.70%, ctx=3074, majf=0, minf=39
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,3072,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+  WRITE: bw=791MiB/s (829MB/s), 791MiB/s-791MiB/s (829MB/s-829MB/s), io=3072MiB (3221MB), run=3884-3884msec
+
+Disk stats (read/write):
+  sdb: ios=78/5791, merge=0/0, ticks=16/5034, in_queue=5051, util=98.18%
