@@ -49,7 +49,7 @@ A Python script, plot_fio_results.py, is used to plot the results for visualizat
 
 ### 5. Observations
 
-[Include any key observations or findings from the benchmark here.]
+- TODO
 
 ## Conclusion
 
