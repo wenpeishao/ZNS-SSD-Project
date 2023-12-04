@@ -6,7 +6,7 @@ OUTPUT_FILE="fio_results.csv"
 
 # Define block sizes for testing (in KB)
 #BLOCK_SIZES=(128 256 512 1024)
-BLOCK_SIZES=(512)
+BLOCK_SIZES=(4 128 512 1024)
 
 # Function to perform a fast reset of the SSD
 reset_ssd() {
@@ -38,7 +38,7 @@ for BS in "${BLOCK_SIZES[@]}"; do
 
     fio --name=garbage_collection_test --filename=$SSD_DEVICE --ioengine=io_uring \
     --rw=randwrite --bs=${BS}k --iodepth=1 --direct=1 --runtime=900 --group_reporting \
-    --write_bw_log=$LOG_PREFIX --log_avg_msec=100 --time_based
+    --write_bw_log=$LOG_PREFIX --log_avg_msec=1000 --time_based
 
 
     # Find and process all matching log files
