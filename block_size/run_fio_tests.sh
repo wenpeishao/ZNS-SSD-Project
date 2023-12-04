@@ -5,7 +5,8 @@ SSD_DEVICE="/dev/nvme0n1"  # Replace with your SSD device
 OUTPUT_FILE="fio_results.csv"
 
 # Define block sizes for testing (in KB)
-BLOCK_SIZES=(128 256 512 1024)
+#BLOCK_SIZES=(128 256 512 1024)
+BLOCK_SIZES=(512)
 
 # Function to perform a fast reset of the SSD
 reset_ssd() {
@@ -28,9 +29,14 @@ for BS in "${BLOCK_SIZES[@]}"; do
     #          --runtime= --ioengine=io_uring --direct=1 --rw=write --bs=${BS}k \
     #          --iodepth=1 --write_bw_log=$LOG_PREFIX --log_avg_msec=100
 
-    fio --name=seq-write-test --filename=$SSD_DEVICE --size=10G --time_based \
-        --runtime=900 --ioengine=io_uring --direct=1 --rw=write --bs=${BS}k \
-        --iodepth=32 --write_bw_log=$LOG_PREFIX --log_avg_msec=100
+    # fio --name=seq-write-test --filename=$SSD_DEVICE --size=3000G --time_based \
+    #     --runtime=3000 --ioengine=io_uring --direct=1 --rw=write --bs=${BS}k \
+    #     --iodepth=32 --write_bw_log=$LOG_PREFIX --log_avg_msec=100
+
+    fio --name=garbage_collection_test --filename=$SSD_DEVICE --size=10G --ioengine=io_uring \
+    --rw=randwrite --bs=4k --iodepth=32 --direct=1 --runtime=3600 --group_reporting \
+    --write_bw_log=$LOG_PREFIX --log_avg_msec=100 --time_based
+
 
     # Find and process all matching log files
     for LOG_FILE in ${LOG_PREFIX}*.log; do
