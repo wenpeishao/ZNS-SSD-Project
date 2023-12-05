@@ -10,7 +10,7 @@ BLOCK_SIZES=(4096)
 reset_ssd() {
     echo "Performing a fast reset of the SSD: $SSD_DEVICE"
     sudo blkdiscard $SSD_DEVICE
-    sleep 600  # Allow the SSD some time to stabilize after reset
+    # sleep 600  # Allow the SSD some time to stabilize after reset
 }
 
 run_test() {
