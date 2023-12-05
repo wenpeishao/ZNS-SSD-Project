@@ -14,16 +14,21 @@ data = pd.read_csv(csv_file)
 # Convert time from milliseconds to minutes for plotting
 data['Time (minutes)'] = data['Time (ms)'] / 60000
 
-# Plotting
-plt.figure(figsize=(10, 6))
+# Plotting with a larger figure size
+plt.figure(figsize=(60, 40))
 for bs in data['Block Size (KB)'].unique():
     subset = data[data['Block Size (KB)'] == bs]
-    plt.plot(subset['Time (minutes)'], subset['Throughput (MiB/s)'], marker='o', label=f'BS: {bs}KB')
+    # Adjusted linewidth for thinner lines
+    plt.plot(subset['Time (minutes)'], subset['Throughput (MiB/s)'], label=f'BS: {bs}KB', linewidth=1)
 
 plt.title(f'SSD Performance: {test_type} Throughput vs Time')
 plt.xlabel('Time (minutes)')
 plt.ylabel('Throughput (MiB/s)')
 plt.legend()
 plt.grid(True)
-plt.savefig(f'performance_plot_{test_type}.png')
-plt.show()
+
+# Save the plot to a file
+plt.savefig(f'performance_plot_{test_type}.png', dpi=300)
+
+# Comment out or remove this line to prevent the plot from being displayed
+# plt.show()
