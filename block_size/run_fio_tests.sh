@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define SSD device
-SSD_DEVICE="/dev/nvme0n1"  # Replace with your SSD device
+SSD_DEVICE="/dev/nvme0n1" 
 
 # Define block sizes for testing (in KB)
 BLOCK_SIZES=(4 128 512 1024)
