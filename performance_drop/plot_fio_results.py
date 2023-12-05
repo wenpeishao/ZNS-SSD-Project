@@ -15,7 +15,7 @@ data = pd.read_csv(csv_file)
 data['Time (minutes)'] = data['Time (ms)'] / 60000
 
 # Plotting with a larger figure size
-plt.figure(figsize=(30, 20))
+plt.figure(figsize=(15, 10))
 for bs in data['Block Size (KB)'].unique():
     subset = data[data['Block Size (KB)'] == bs]
     # Adjusted linewidth for thinner lines
