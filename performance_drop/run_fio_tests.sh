@@ -20,6 +20,7 @@ run_test() {
 
     for BS in "${BLOCK_SIZES[@]}"; do
         reset_ssd
+        sleep 600
         LOG_PREFIX="test_${RW_TYPE}_bs_${BS}_bw"
 
         fio --name=garbage_collection_test --filename=$SSD_DEVICE --ioengine=io_uring \
@@ -40,7 +41,7 @@ run_test() {
 }
 
 # Run tests for random and sequential writes
-run_test "randwrite"
+# run_test "randwrite"
 run_test "write"
 
 # Plot results for each test type
