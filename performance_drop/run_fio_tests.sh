@@ -10,7 +10,7 @@ BLOCK_SIZES=(4096)
 reset_ssd() {
     echo "Performing a fast reset of the SSD: $SSD_DEVICE"
     sudo blkdiscard $SSD_DEVICE
-    # sleep 600  # Allow the SSD some time to stabilize after reset
+    sleep 1200  # Allow the SSD some time to stabilize after reset
 }
 
 run_test() {
@@ -24,8 +24,8 @@ run_test() {
         LOG_PREFIX="test_${RW_TYPE}_bs_${BS}_bw"
 
         fio --name=test_${RW_TYPE}_bs_${BS} --filename=$SSD_DEVICE --ioengine=io_uring \
-            --rw=$RW_TYPE --rwmixread=50 --bs=${BS}k --iodepth=64 --direct=1 --runtime=10 --group_reporting \
-            --write_bw_log=$LOG_PREFIX --log_avg_msec=500 --time_based
+            --rw=$RW_TYPE --rwmixread=50 --bs=${BS}k --iodepth=64 --direct=1 --runtime=7200 --group_reporting \
+            --write_bw_log=$LOG_PREFIX --log_avg_msec=50 --time_based
             
         for LOG_FILE in ${LOG_PREFIX}*.log; do
             chmod 777 $LOG_FILE
@@ -52,3 +52,4 @@ python3 plot_fio_results.py fio_results_randwrite.csv
 python3 plot_fio_results.py fio_results_randread.csv
 python3 plot_fio_results.py fio_results_write.csv
 python3 plot_fio_results.py fio_results_read.csv
+python3 plot_fio_results.py fio_results_randrw.csv
